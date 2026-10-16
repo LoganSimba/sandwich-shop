@@ -31,9 +31,8 @@ public class SandwichShop {
                 System.out.printf("Additional cost is: $%.2f%n", additionalCost);
             }
 
-        } else if (loaded.equalsIgnoreCase("No")) {
-            additionalCost = 0;
-        } else {
+        }
+        else {
             System.out.println("I cant understand your answer");
             System.exit(0);
         }
