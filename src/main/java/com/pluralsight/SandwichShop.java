@@ -11,19 +11,41 @@ public class SandwichShop {
         System.out.printf("Which sandwich size do you want (1 or 2) : ");
         int sandwichSize = scanner.nextInt();
 
+        // get the next line out the buffer
+        scanner.nextLine();
+
+
+        //prompt user for a loaded sandwich
+        System.out.printf("Would like you're sandwich loaded");
+        String loaded = scanner.nextLine();
+
+        double additionalCost = 0;
+
+        // if statement to check if they want loaded sandwich
+        if(loaded.equalsIgnoreCase("Yes")){
+            additionalCost = 1;
+            System.out.printf("Additional cost is: %.2f%n", additionalCost);
+        }
+        else if(loaded.equalsIgnoreCase("No")){
+            additionalCost = 1.75;
+        }
+
+
         // initialized the sandwich price
         double sandwichPrice = 0;
 
         //if statement to check the sandwich price
         if( sandwichSize == 1){
-            sandwichPrice = 5.45;
+            sandwichPrice = 5.45 + additionalCost;
             System.out.printf("You chose a small sandwich: $%.2f\n", sandwichPrice);
+
         }else if(sandwichSize == 2){
-            sandwichPrice = 8.95;
+            sandwichPrice = 8.95 + additionalCost;
             System.out.printf("You chose a Large sandwich: $%.2f\n", sandwichPrice);
         }
         else{
-            System.out.println("Try again (1 - 2)");
+            System.out.println("I can't understand your selection");
+            System.exit(0);
         }
 
 
