@@ -16,25 +16,24 @@ public class SandwichShop {
 
 
         //prompt user for a loaded sandwich
-        System.out.printf("Would like you're sandwich loaded(Yes/No): ");
+        System.out.printf("Would you like you're sandwich loaded(Yes/No): ");
         String loaded = scanner.nextLine();
 
+        //initialized additional cost
         double additionalCost = 0;
-
-        // if statement to check if they want loaded sandwich
-        if(loaded.equalsIgnoreCase("Yes")){
-            if (sandwichSize == 1){
+        // if statement to check if they wanted a loaded sandwich, if so add 1 and 1.75 to small and large respectively
+        if (loaded.equalsIgnoreCase("Yes")) {
+            if (sandwichSize == 1) {
                 additionalCost = 1;
                 System.out.printf("Additional cost is: $%.2f%n", additionalCost);
-            }else if(sandwichSize == 2){
+            } else if (sandwichSize == 2) {
                 additionalCost = 1.75;
                 System.out.printf("Additional cost is: $%.2f%n", additionalCost);
             }
 
-        }
-        else if(loaded.equalsIgnoreCase("No")){
+        } else if (loaded.equalsIgnoreCase("No")) {
             additionalCost = 0;
-        }else{
+        } else {
             System.out.println("I cant understand your answer");
             System.exit(0);
         }
@@ -42,51 +41,42 @@ public class SandwichShop {
 
         // initialized the sandwich price
         double sandwichPrice = 0;
-
-        //if statement to check the sandwich price
-        if( sandwichSize == 1){
+        //if statement to check the sandwich price,
+        if (sandwichSize == 1) {
             sandwichPrice = 5.45 + additionalCost;
             System.out.printf("You chose a small sandwich: $%.2f\n", sandwichPrice);
 
-        }else if(sandwichSize == 2){
+        } else if (sandwichSize == 2) {
             sandwichPrice = 8.95 + additionalCost;
             System.out.printf("You chose a Large sandwich: $%.2f\n", sandwichPrice);
-        }
-        else{
+        } else {
             System.out.println("I can't understand your selection");
             System.exit(0);
         }
-
 
 
         //prompt the user for their age
         System.out.printf("How old are you ? : ");
         int age = scanner.nextInt();
 
-        //initialized discound and cost of sandwich
-        int discount = 0;
-        double costOfSandwich;
 
+        //initialized discount
+        int discount = 0;
         //if statement to check for the age and discount
-        if( age <= 17 ){
+        if (age <= 17) {
             discount = 10;
             System.out.println("You received a 10% discount");
-        }
-
-        else if(age >= 65){
+        } else if (age >= 65) {
             discount = 20;
-            System.out.println("You received a 20% discound");
-        }
-
-        else{
+            System.out.println("You received a 20% discount");
+        } else {
             System.out.println("You won't receive a discount");
         }
 
 
-        //Calulating cost of the sandwich and print it
-        costOfSandwich = sandwichPrice - (sandwichPrice * discount / 100);
+        //Initialize cost of sandwich and calculate it, then print it
+        double costOfSandwich = sandwichPrice - (sandwichPrice * discount / 100);
         System.out.printf("Cost of your sandwich is: $%.2f", costOfSandwich);
-
 
 
     }
