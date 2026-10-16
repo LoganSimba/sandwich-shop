@@ -29,6 +29,9 @@ public class SandwichShop {
             discount = 20;
             System.out.println("You received a 20% discound");
         }
+        else{
+            System.out.println("You won't receive a discount");
+        }
 
 
     }
