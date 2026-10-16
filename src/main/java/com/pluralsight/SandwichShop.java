@@ -16,18 +16,24 @@ public class SandwichShop {
 
 
         //prompt user for a loaded sandwich
-        System.out.printf("Would like you're sandwich loaded");
+        System.out.printf("Would like you're sandwich loaded(Yes/No): ");
         String loaded = scanner.nextLine();
 
         double additionalCost = 0;
 
         // if statement to check if they want loaded sandwich
         if(loaded.equalsIgnoreCase("Yes")){
-            additionalCost = 1;
-            System.out.printf("Additional cost is: %.2f%n", additionalCost);
+            if (sandwichSize == 1){
+                additionalCost = 1;
+                System.out.printf("Additional cost is: $%.2f%n", additionalCost);
+            }else if(sandwichSize == 2){
+                additionalCost = 1.75;
+                System.out.printf("Additional cost is: $%.2f%n", additionalCost);
+            }
+
         }
         else if(loaded.equalsIgnoreCase("No")){
-            additionalCost = 1.75;
+            additionalCost = 0;
         }else{
             System.out.println("I cant understand your answer");
             System.exit(0);
