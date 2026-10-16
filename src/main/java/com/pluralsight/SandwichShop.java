@@ -28,6 +28,9 @@ public class SandwichShop {
         }
         else if(loaded.equalsIgnoreCase("No")){
             additionalCost = 1.75;
+        }else{
+            System.out.println("I cant understand your answer");
+            System.exit(0);
         }
 
 
