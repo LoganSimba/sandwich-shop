@@ -17,8 +17,10 @@ public class SandwichShop {
         //if statement to check the sandwich price
         if( sandwichSize == 1){
             sandwichPrice = 5.45;
+            System.out.printf("You chose a small sandwich: $%.2f\n", sandwichPrice);
         }else if(sandwichSize == 2){
             sandwichPrice = 8.95;
+            System.out.printf("You chose a Large sandwich: $%.2f\n", sandwichPrice);
         }
         else{
             System.out.println("Try again (1 - 2)");
@@ -38,12 +40,13 @@ public class SandwichShop {
         if( age <= 17 ){
             discount = 10;
             System.out.println("You received a 10% discount");
-
         }
+
         else if(age >= 65){
             discount = 20;
             System.out.println("You received a 20% discound");
         }
+
         else{
             System.out.println("You won't receive a discount");
         }
