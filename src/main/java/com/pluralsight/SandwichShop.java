@@ -8,10 +8,12 @@ public class SandwichShop {
         Scanner scanner = new Scanner(System.in);
 
         //prompt user for the size of sandwich they want
-        System.out.println("Which sandwich size do you want (1 or 2)?");
+        System.out.printf("Which sandwich size do you want (1 or 2) : ");
         int sandwichSize = scanner.nextInt();
 
-
+        //prompt the user for their age
+        System.out.printf("How old are you ? : ");
+        int age = scanner.nextInt();
 
 
     }
